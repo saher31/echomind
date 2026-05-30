@@ -1,0 +1,11 @@
+tensorflow>=2.15
+fastapi
+uvicorn[standard]
+python-multipart
+jinja2
+numpy
+pillow
+h5py
+pandas
+tqdm
+split-folders

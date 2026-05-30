@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EchoMind</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-label="MRI classifier">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Cardiac MRI Classifier</p>
+            <h1>EchoMind</h1>
+          </div>
+          <div class="model-chip">MobileNetV2</div>
+        </header>
+
+        <div class="grid">
+          <section class="panel upload-panel">
+            <div id="dropzone" class="dropzone" tabindex="0">
+              <input id="file-input" type="file" accept="image/*" />
+              <div class="drop-icon" aria-hidden="true">+</div>
+              <div>
+                <h2>Upload MRI Image</h2>
+                <p>PNG, JPG, JPEG, BMP</p>
+              </div>
+              <button id="choose-button" class="button" type="button">Choose image</button>
+            </div>
+
+            <div class="preview-wrap">
+              <img id="preview" alt="Uploaded MRI preview" />
+              <div id="empty-preview" class="empty-preview">No image selected</div>
+            </div>
+          </section>
+
+          <section class="panel result-panel">
+            <div class="result-head">
+              <span class="status-dot" id="status-dot"></span>
+              <span id="status-text">Waiting for image</span>
+            </div>
+
+            <div class="prediction">
+              <p class="label">Prediction</p>
+              <strong id="prediction-value">--</strong>
+            </div>
+
+            <div class="scores">
+              <div class="score-row">
+                <span>Normal</span>
+                <strong id="normal-score">--</strong>
+              </div>
+              <div class="meter">
+                <span id="normal-bar"></span>
+              </div>
+
+              <div class="score-row">
+                <span>Sick</span>
+                <strong id="sick-score">--</strong>
+              </div>
+              <div class="meter danger">
+                <span id="sick-bar"></span>
+              </div>
+            </div>
+
+            <div id="message" class="message"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', path='/app.js') }}"></script>
+  </body>
+</html>

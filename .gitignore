@@ -1,0 +1,21 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.vscode/
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Large/local datasets
+mri_data/
+mri_data_split/
+ACDC_preprocessed/
+ACDC_test_slices_fixed/
+data/
+
+# Generated outputs
+outputs/
+*.log
